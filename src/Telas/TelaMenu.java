@@ -6,6 +6,12 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+import Telas.Cliente.AlterarCliente;
+import Telas.Cliente.CadastroCliente;
+import Telas.Cliente.ConsultarCliente;
+import Telas.Cliente.ExcluirCliente;
+import Telas.Venda.CadastroVenda;
+
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -13,7 +19,7 @@ import java.awt.event.ActionListener;
 
 public class TelaMenu extends JFrame{
     
-    JFrame frameMenu = new JFrame("Sistema Controle de Vendas");
+    JFrame frameMenu = new JFrame("Controle de Vendas");
     JPanel panelMenu = new JPanel();
     JMenuBar menuBar = new JMenuBar();
     Font f = new Font("Calibri", Font.BOLD, 20);
@@ -26,15 +32,10 @@ public class TelaMenu extends JFrame{
     JMenuItem menuItemCliente1 = new JMenuItem(" - Cadastrar Cliente");
     JMenuItem menuItemCliente2 = new JMenuItem(" - Alterar Cliente");
     JMenuItem menuItemCliente3 = new JMenuItem(" - Consultar Cliente");
-    JMenuItem menuItemCliente4 = new JMenuItem(" - Listar Clientes");
-    JMenuItem menuItemCliente5 = new JMenuItem(" - Excluir Clientes");
-
+    JMenuItem menuItemCliente4 = new JMenuItem(" - Excluir Clientes");
 
     JMenuItem menuItemVenda1 = new JMenuItem(" - Cadastrar Venda");
-    JMenuItem menuItemVenda2 = new JMenuItem(" - Alterar Venda");
-    JMenuItem menuItemVenda3 = new JMenuItem(" - Consultar Venda");
-    JMenuItem menuItemVenda4 = new JMenuItem(" - Listar Venda");
-    JMenuItem menuItemVenda5 = new JMenuItem(" - Excluir Venda");
+    JMenuItem menuItemVenda2 = new JMenuItem(" - Consultar Venda");
 
     JMenuItem menuItemSair = new JMenuItem("Sair");
 
@@ -45,7 +46,7 @@ public class TelaMenu extends JFrame{
     public void configuraTela(){
         panelMenu.setLayout(null);
         frameMenu.add(panelMenu);
-        frameMenu.setSize(1200,700);
+        frameMenu.setSize(900,600);
         frameMenu.setLocationRelativeTo(null);
         frameMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameMenu.setVisible(true);
@@ -64,7 +65,8 @@ public class TelaMenu extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Adicionar chamada para tela
-                
+                CadastroCliente cadCliente = new CadastroCliente();
+                cadCliente.setResizable(false);
             }});
 
         menuCliente.add(menuItemCliente2);
@@ -72,6 +74,8 @@ public class TelaMenu extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                AlterarCliente altCliente = new AlterarCliente();
+                altCliente.setResizable(false);
                 //Adicionar chamada para tela
                 
             }});
@@ -80,8 +84,9 @@ public class TelaMenu extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                ConsultarCliente consCliente = new ConsultarCliente();
+                consCliente.setResizable(false);
                 //Adicionar chamada para tela
-                
                 
             }});
         menuCliente.add(menuItemCliente4);
@@ -89,18 +94,9 @@ public class TelaMenu extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                ExcluirCliente excCliente = new ExcluirCliente();
+                excCliente.setResizable(false);
                 //Adicionar chamada para tela
-                
-                
-            }});
-
-        menuCliente.add(menuItemCliente5);
-        menuItemCliente5.addActionListener(new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Adicionar chamada para tela
-                
                 
             }});
 
@@ -113,6 +109,8 @@ public class TelaMenu extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                CadastroVenda cadVenda = new CadastroVenda();
+                cadVenda.setResizable(false);
                 //Adicionar chamada para tela
                 
             }
@@ -128,36 +126,9 @@ public class TelaMenu extends JFrame{
             }
 
         });
-        menuVenda.add(menuItemVenda3);
-        menuItemVenda3.addActionListener(new ActionListener(){
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Adicionar chamada para tela
-                
-            }
+        
 
-        });
-        menuVenda.add(menuItemVenda4);
-        menuItemVenda4.addActionListener(new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Adicionar chamada para tela
-                
-            }
-
-        });
-        menuVenda.add(menuItemVenda5);
-        menuItemVenda5.addActionListener(new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Adicionar chamada para tela
-                
-            }
-
-        });
         menuBar.add(menuVenda);
 
         menuSair.setFont(f);

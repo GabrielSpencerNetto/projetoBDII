@@ -2,17 +2,17 @@ package Model;
 
 public class Customers {
     
-    private int CustomerID;
-    private String CompanyName;
-    private String ContactName;
-    private String ContactTitle;
-    private String Address;
-    private String City;
-    private String Region;
-    private String PostalCode;
-    private String Country;
-    private String Phone;
-    private String Fax;
+    public int CustomerID;
+    public String CompanyName;
+    public String ContactName;
+    public String ContactTitle;
+    public String Address;
+    public String City;
+    public String Region;
+    public String PostalCode;
+    public String Country;
+    public String Phone;
+    public String Fax;
     
     public Customers() {
     }
