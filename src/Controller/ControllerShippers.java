@@ -34,15 +34,13 @@ public class ControllerShippers {
         return shi;
     }
 
-    public void listarTodos() {
+    public ArrayList<Shippers> listarTodos() {
         ArrayList<Shippers> local = this.shippers.consultarTodos();
 
         if (local != null) {
-            for (Shippers l : local) {
-                System.out.println(l);
-            }
+            return local;
         } else {
-            System.out.println("Repositorio Vazio");
+            return null;
         }
     }
 

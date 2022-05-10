@@ -6,24 +6,24 @@ import javax.imageio.ImageIO;
 
 public class Employees {
     
-    private int EmployeeID;
-    private String LastName;
-    private String FirstName;
-    private String Title;
-    private String TitleOfCroustesy;
-    private Date BirthDate;
-    private Date HireDate;
-    private String Address;
-    private String City;
-    private String Region;
-    private String PostalCode;
-    private String Country;
-    private String HomePhone;
-    private String Extension;
-    private ImageIO Photo;
-    private String Notes;
-    private int ReportsTo; //FK de Employee
-    private String PhotoPath;
+    public int EmployeeID;
+    public String LastName;
+    public String FirstName;
+    public String Title;
+    public String TitleOfCroustesy;
+    public Date BirthDate;
+    public Date HireDate;
+    public String Address;
+    public String City;
+    public String Region;
+    public String PostalCode;
+    public String Country;
+    public String HomePhone;
+    public String Extension;
+    public ImageIO Photo;
+    public String Notes;
+    public int ReportsTo; //FK de Employee
+    public String PhotoPath;
     
     public Employees() {
     }

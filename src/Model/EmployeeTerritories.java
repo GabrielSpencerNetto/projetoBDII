@@ -2,8 +2,8 @@ package Model;
 
 public class EmployeeTerritories {
     
-    private int EmployeeID; //FK Employee
-    private int TerritoryID; //FK Territory
+    public int EmployeeID; //FK Employee
+    public int TerritoryID; //FK Territory
     
     public EmployeeTerritories() {
     }

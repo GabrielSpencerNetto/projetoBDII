@@ -2,16 +2,16 @@ package Model;
 
 public class Products {
     
-    private int ProductID; //pk
-    private String ProductName;
-    private int SupplierID; //fk
-    private int CategoryID; //fk
-    private String QuantityPerUnit;
-    private double UnitPrice;
-    private double UnitsInStok;
-    private double UnitsOnOrder;
-    private double ReorderLevel;
-    private int Discontinued; // 1 ou 0
+    public int ProductID; //pk
+    public String ProductName;
+    public int SupplierID; //fk
+    public int CategoryID; //fk
+    public String QuantityPerUnit;
+    public double UnitPrice;
+    public double UnitsInStok;
+    public double UnitsOnOrder;
+    public double ReorderLevel;
+    public int Discontinued; // 1 ou 0
     
     public Products() {
     }

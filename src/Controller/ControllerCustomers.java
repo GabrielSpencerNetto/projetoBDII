@@ -33,15 +33,13 @@ public class ControllerCustomers {
         return cus;
     }
 
-    public void listarTodos() {
+    public ArrayList<Customers> listarTodos() {
         ArrayList<Customers> local = this.customers.consultarTodos();
 
         if (local != null) {
-            for (Customers l : local) {
-                System.out.println(l);
-            }
+            return local;
         } else {
-            System.out.println("Repositorio Vazio");
+            return null;
         }
     }
 

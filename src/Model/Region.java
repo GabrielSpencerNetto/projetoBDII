@@ -2,8 +2,8 @@ package Model;
 
 public class Region {
     
-    private int RegionID; //pk
-    private String RegionDescription;
+    public int RegionID; //pk
+    public String RegionDescription;
     
     public Region() {
     }

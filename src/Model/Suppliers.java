@@ -2,18 +2,18 @@ package Model;
 
 public class Suppliers {
     
-    private int SupplierID; //pk
-    private String CompanyName;
-    private String ContactName;
-    private String ContactTitle;
-    private String Address;
-    private String City;
-    private String Reion;
-    private String PostalCode;
-    private String Country;
-    private String Phone;
-    private String Fax;
-    private String HomePage;
+    public int SupplierID; //pk
+    public String CompanyName;
+    public String ContactName;
+    public String ContactTitle;
+    public String Address;
+    public String City;
+    public String Reion;
+    public String PostalCode;
+    public String Country;
+    public String Phone;
+    public String Fax;
+    public String HomePage;
     
     public Suppliers() {
     }

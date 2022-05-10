@@ -2,11 +2,11 @@ package Model;
 
 public class OrderDetails {
     
-    private int OrderID; // pk e fk
-    private int ProductID; //pk e fk
-    private double UnitPrice;
-    private double Quantity;
-    private double Discount;
+    public int OrderID; // pk e fk
+    public int ProductID; //pk e fk
+    public double UnitPrice;
+    public double Quantity;
+    public double Discount;
     
     public OrderDetails() {
     }

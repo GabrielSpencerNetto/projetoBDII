@@ -2,9 +2,9 @@ package Model;
 
 public class Territories {
  
-    private int TerritoryID; //pk
-    private String TerritoryDescription;
-    private int RegionID; //fk
+    public int TerritoryID; //pk
+    public String TerritoryDescription;
+    public int RegionID; //fk
     
     public Territories() {
     }

@@ -34,15 +34,13 @@ public class ControllerEmployees {
         return emp;
     }
 
-    public void listarTodos() {
+    public ArrayList<Employees> listarTodos() {
         ArrayList<Employees> local = this.employees.consultarTodos();
 
         if (local != null) {
-            for (Employees l : local) {
-                System.out.println(l);
-            }
+           return local;
         } else {
-            System.out.println("Repositorio Vazio");
+            return null;
         }
     }
 

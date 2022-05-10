@@ -2,9 +2,9 @@ package Model;
 
 public class Shippers {
     
-    private int ShipperID; //pk
-    private String CompanyName;
-    private String Phone;
+    public int ShipperID; //pk
+    public String CompanyName;
+    public String Phone;
     
     public Shippers() {
     }

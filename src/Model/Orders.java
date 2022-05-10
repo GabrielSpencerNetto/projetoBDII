@@ -4,20 +4,20 @@ import java.util.Date;
 
 public class Orders {
     
-    private int OrderID; //pk
-    private int CustomerID; //fk
-    private int EmployeeID; //fk
-    private Date OrderDate;
-    private Date RequiredDate;
-    private Date ShippedDate;
-    private int ShipVia; //fk
-    private double Freigth;
-    private String ShipName;
-    private String ShipAddress;
-    private String ShipCity;
-    private String ShipRegion;
-    private String ShipPostalCode;
-    private String ShipCountry;
+    public int OrderID; //pk
+    public int CustomerID; //fk
+    public int EmployeeID; //fk
+    public Date OrderDate;
+    public Date RequiredDate;
+    public Date ShippedDate;
+    public int ShipVia; //fk
+    public double Freigth;
+    public String ShipName;
+    public String ShipAddress;
+    public String ShipCity;
+    public String ShipRegion;
+    public String ShipPostalCode;
+    public String ShipCountry;
     
     public Orders() {
     }

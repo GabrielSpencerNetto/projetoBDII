@@ -34,15 +34,13 @@ public class ControllerProducts {
         return pro;
     }
 
-    public void listarTodos() {
+    public ArrayList<Products> listarTodos() {
         ArrayList<Products> local = this.products.consultarTodos();
 
         if (local != null) {
-            for (Products l : local) {
-                System.out.println(l);
-            }
+            return local;
         } else {
-            System.out.println("Repositorio Vazio");
+            return null;
         }
     }
 
