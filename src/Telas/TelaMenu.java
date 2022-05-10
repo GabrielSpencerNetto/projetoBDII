@@ -11,6 +11,7 @@ import Telas.Cliente.CadastroCliente;
 import Telas.Cliente.ConsultarCliente;
 import Telas.Cliente.ExcluirCliente;
 import Telas.Venda.CadastroVenda;
+import Telas.Venda.ConsultaVenda;
 
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -121,6 +122,8 @@ public class TelaMenu extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                ConsultaVenda consVenda = new ConsultaVenda();
+                consVenda.setResizable(false);
                 //Adicionar chamada para tela
                 
             }
