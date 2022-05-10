@@ -1,24 +1,20 @@
 package Telas.Venda;
 
 import java.util.ArrayList;
-
+import java.util.List;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.text.MaskFormatter;
 
 import Controller.ControllerCustomers;
 import Controller.ControllerEmployees;
@@ -27,6 +23,7 @@ import Controller.ControllerShippers;
 import Model.Customers;
 import Model.Employees;
 import Model.OrderDetails;
+import Model.Orders;
 import Model.Products;
 import Model.Shippers;
 import Util.Label;
@@ -38,15 +35,17 @@ public class CadastroVenda extends JFrame{
     JPanel panel = new JPanel();
 
     JScrollPane scroll = new JScrollPane(panel);
-    //TextArea[] textAreas = new TextArea[100];
+    TextArea[] textAreas = new TextArea[100];
+    int i=0;
+
 
     JComboBox<String> comboCustomer;
     JComboBox<String> comboEmployee;
     JComboBox<String> comboShipVia;
     JComboBox<String> comboProducts;
 
-    Label labelOrderID, labelOrderDate, labelRequiredDate, labelShippedDate, labelFreigth, labelShipName, labelShipAddress, labelShipCity, labelShipRegion, labelShipPostalCode, labelCountry, labelCustomer, labelEmployee, labelShipVia, labelProducts;
-    Text textOrderID, textOrderDate, textRequiredDate, textShippedDate, textFreigth, textShipName, textShipAddress, textShipCity, textShipRegion, textShipPostalCode, textCountry;
+    Label labelOrderID, labelOrderDate, labelRequiredDate, labelShippedDate, labelFreigth, labelShipName, labelShipAddress, labelShipCity, labelShipRegion, labelShipPostalCode, labelCountry, labelCustomer, labelEmployee, labelShipVia, labelProducts, labelQuantity;
+    Text textOrderID, textOrderDate, textRequiredDate, textShippedDate, textFreigth, textShipName, textShipAddress, textShipCity, textShipRegion, textShipPostalCode, textCountry, textQuantity;
 
     ArrayList<String> listaComboCustomer = new ArrayList<String>();
     ArrayList<String> listaComboEmployee = new ArrayList<String>();
@@ -109,7 +108,7 @@ public class CadastroVenda extends JFrame{
         buttonAdd.setText("+");
         buttonAdd.setFont(new Font("SansSerif", Font.PLAIN, 16));
         buttonAdd.setBackground(new Color(229,235,234));
-        buttonAdd.setBounds(420, 460, 45, 40);
+        buttonAdd.setBounds(580, 460, 45, 40);
         buttonAdd.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -235,7 +234,14 @@ public class CadastroVenda extends JFrame{
         comboProducts.setBounds(15, 470, 400, 25);        
         panelCadastro.add(comboProducts);
 
+        labelQuantity = new Label("Quantity", 450, 400, 100, 100);
+        panelCadastro.add(labelQuantity);
 
+        textQuantity = new Text();
+        textQuantity.setBounds(450, 470, 100, 25);
+        panelCadastro.add(textQuantity);
+        
+        //setBounds(420, 460, 45, 40);
        
         panel.setBackground(Color.white);
         panel.setBounds(15, 520, 840, 350);
@@ -245,7 +251,43 @@ public class CadastroVenda extends JFrame{
         scroll.setBounds(15, 520, 840, 200);
         scroll.setViewportView(panel);
 
+
         panelCadastro.add(scroll);
+    }
+
+    public void montaVenda(){
+
+        int index,id;
+        String selecionado;
+
+        selecionado = (String) comboCustomer.getSelectedItem();
+        index = ((List<String>) comboCustomer).indexOf(" ");
+        selecionado = selecionado.substring(0, index);
+        id = Integer.parseInt(selecionado);
+
+
+
+        Orders newOrder = new Orders();
+
+    }
+
+    public void adicionaProdutoLista(){
+        String produtoSelecionado;
+        int index,id;
+        Products produto = new Products();
+
+        produtoSelecionado = (String) comboProducts.getSelectedItem();
+        index = produtoSelecionado.indexOf(" ");
+        produtoSelecionado = produtoSelecionado.substring(0, index);
+        id = Integer.parseInt(produtoSelecionado);
+
+        OrderDetails orderDetails = new OrderDetails(Integer.parseInt(textOrderID.getText()), id, 0, Double.parseDouble(textQuantity.getText()), 0);
+        listaOrderDetails.add(orderDetails);
+
+        TextArea text = new TextArea(orderDetails, produto);
+        textAreas[i] = text;
+        panel.add(text);
+
     }
 
     public void montaComboBoxCustomer(){
@@ -311,6 +353,22 @@ public class CadastroVenda extends JFrame{
             comboProducts.addItem(" - ");
         }
 
+    }
+
+    public class TextArea extends JTextArea{
+        public TextArea(OrderDetails orderDetails, Products products){
+            setText(
+            "ID Order: " + orderDetails.OrderID + "\n" +
+            "Nome Product: " + products.ProductName + "\n" +
+            "Preço: " + products.QuantityPerUnit + "\n" +
+            "Quantidade: " + orderDetails.Quantity + "\n"
+            );
+            setLineWrap(true);
+            setWrapStyleWord(true);
+            setEnabled(false);
+            setForeground(Color.black);
+            setFont(new Font("Calibri", Font.BOLD, 20));
+        }
     }
 
 }
